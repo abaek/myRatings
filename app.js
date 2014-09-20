@@ -25,23 +25,9 @@ require('./models/Users');
 require('./models/Ratings')
 
 mongoose.connect('mongodb://andy:123456@kahana.mongohq.com:10021/myRatings');
-//mongoose.connect('mongodb://localhost/news');
 
 
 var routes = require('./routes/index');
-
-
-
-
-// var theport = process.env.PORT || 5000;
-
-// http.createServer(function (req, res) {
-// }).listen(theport);
-
-
-
-
-
 
 
 

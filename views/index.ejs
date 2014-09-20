@@ -2,11 +2,14 @@
 <head>
   <title>myRatings</title>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
-  <script src="/javascripts/angularApp.js"></script>
+  <script src="/javascripts/angular-route.js"></script>
+  <script src="/javascripts/routes.js"></script>
+  <script src="/javascripts/services.js"></script>
+  <script src="/javascripts/product.js"></script>
+  <script src="/javascripts/addRating.js"></script>
 </head>
 
-<body ng-app="flapperNews">
- 	<ui-view></ui-view>
+<body ng-app="myRatings">
+ 	<div ng-view></div>
 </body>
 </html>
