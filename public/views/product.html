@@ -1,7 +1,13 @@
 <div class="page-header">
-<h1>{{productName}}</h1>
+<h1></h1>
 </div>
 
-<div ng-repeat="rating in ratings">
-	{{rating}}
+<div id="search">
+	Search: <input></input>
+	Category: <select ng-model="categoryChosen" ng-options="category for category in categories"></select>
 </div>
+
+<div ng-repeat="product in products">
+	<div>{{product}} <span ng-click="goToProduct(product)"> Add Rating</span></div>
+</div>
+

@@ -6,7 +6,7 @@ var myRatings = angular.module('myRatings', ['ngRoute'])
           templateUrl: '/views/product.html',
           controller: 'ProductController'
         })
-        .when('/addRating', {
+        .when('/addRating/:name', {
           templateUrl: '/views/addRating.html',
           controller: 'AddRatingController'
         })

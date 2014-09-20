@@ -1,6 +1,8 @@
 angular.module('myRatings')
-.controller('AddRatingController', ['$http', '$scope', 'DBservice',
-function($http, $scope, DBservice){
+.controller('AddRatingController', ['$http', '$scope', 'DBservice', '$routeParams',
+function($http, $scope, DBservice, $routeParams){
+	$scope.productName = $routeParams['name'];
+
 	console.log('entering MainCtrl');
 
 	$scope.addReview = function(){
