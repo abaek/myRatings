@@ -3,9 +3,9 @@ angular.module('myRatings')
   var factory = {};
 
   factory.addRating = function(rating){
-	return $http.post('/ratings', rating).success(function(data){
-		console.log('added to db');
-	});
+  	return $http.post('/ratings', rating).success(function(data){
+  		console.log('added to db');
+  	});
   }
 
   factory.addUser = function(user){
