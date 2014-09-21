@@ -43,6 +43,10 @@ function($http, $scope, DBservice, $location){
 				ratingStats[res.rating] = ratingStats[res.rating] + 1;				
 			}
 
+			if (!(myNewChart === null || myNewChart===undefined)){
+				myNewChart.destroy();
+			};
+
 			var data = [
 			    {
 			        value: ratingStats[1],
