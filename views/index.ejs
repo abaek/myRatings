@@ -1,5 +1,6 @@
 <html>
-<head>
+<div id="container">
+<head id="header">
   <title>myRatingz</title>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
   <script src="/javascripts/angular-route.js"></script>
@@ -18,7 +19,7 @@
   <script src="/javascripts/addRating.js"></script>
 </head>
 
-<body ng-app="myRatings">
+<body ng-app="myRatings" id="body">
 	<div class="navbar navbar-default">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -55,4 +56,8 @@
 
  	<div ng-view></div>
 </body>
+<footer id="footer">
+© Andy Baek & Meyyappan Nachiappan 2014
+</footer>
+</div>
 </html>
