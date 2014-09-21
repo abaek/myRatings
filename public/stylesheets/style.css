@@ -40,23 +40,11 @@ ul.rating {
 
 #myChart{
   display: inline-block;
-  float: left
+  float: left;
 }
 
 #recentReviews{
   margin-top:50px;
   font-size: 30px;
-}
-
-#footer{
-  height:35px;
-  background-color: black;
-  color: white;
-  position:relative;
-  bottom:0;
-  text-align: right;
-  width:100%;
-  padding-right: 20px;
-  clear:both;
 }
 
