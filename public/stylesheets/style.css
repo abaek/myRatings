@@ -26,3 +26,24 @@ ul.rating {
 .addComment{
   color:black;
 }
+
+.panel-body{
+  color:black;
+}
+
+.panel-primary{
+  width:30%;
+  display: inline-block;
+  float: left;
+  margin: 5px;
+}
+
+#myChart{
+  display: inline-block;
+  float: left
+}
+
+#recentReviews{
+  margin-top:50px;
+  font-size: 30px;
+}
