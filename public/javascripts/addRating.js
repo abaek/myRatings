@@ -7,8 +7,7 @@ function($http, $scope, DBservice, $routeParams){
 	console.log('entering MainCtrl');
 
 	$scope.addReview = function(){
-		var newRating = {name: $scope.productName, category: }
-		var newRating = {title: $scope.title, category: $scope.category, comment: $scope.comments};
+		var newRating = {name: $scope.productName, category: $scope.category, rating: $scope.rating, comments: $scope.comments}
   		DBservice.addRating(newRating);
 	};
 }]);

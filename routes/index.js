@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var Post = mongoose.model('Post');
 var Comment = mongoose.model('Comment');
 var User = mongoose.model('User');
-var Rating = mongoose.model('User');
+var Rating = mongoose.model('Rating');
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -14,42 +14,37 @@ router.get('/', function(req, res) {
 module.exports = router;
 
 
-router.post('/users', function(req, res, next) {
-  var user = new User(req.body);
-
-  user.save(function(err, user){
-    if(err){ return next(err); }
-
-    res.json(user);
-  });
-});
-
-
-
+//HTTP CALLS:
+//Add new rating
 router.post('/ratings', function(req, res, next) {
   var rating = new Rating(req.body);
 
   rating.save(function(err, rating){
     if(err){ return next(err); }
 
-    res.json(rating);
+    return res.json(rating);
   });
 });
 
 
-
-
-
-
-
-
-router.get('/posts', function(req, res, next) {
-  Post.find(function(err, posts){
-    if(err){ return next(err); }
-
-    res.json(posts);
-  });
+//Load all ratings for a product name
+router.get('/ratings/:name', function(req, res) {
+  return res.json(req.result);
 });
+
+router.param('name', function(req, res, next, name) {
+    var query = Rating.find({'name': name});
+
+    query.exec(function (err, result){
+      if (err) { return next(err); }
+      if (!result) { return next(new Error("can't find post")); }
+
+      req.result = result;
+      return next();
+    });
+});
+
+
 
 router.post('/posts', function(req, res, next) {
   var post = new Post(req.body);

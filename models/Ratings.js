@@ -1,10 +1,10 @@
 var mongoose = require('mongoose');
 
 var RatingSchema = new mongoose.Schema({
-  title: String,
+  name: String,
   category: String,
-  comment: String,
-  upvotes: {type: Number, default: 0},
+  rating: String,
+  comments: String
   //comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }]
 });
 

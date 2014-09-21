@@ -1,4 +1,4 @@
-var myRatings = angular.module('myRatings', ['ngRoute'])
+var myRatings = angular.module('myRatings', ['ngRoute', 'ui.bootstrap'])
   .config(['$routeProvider',
     function($routeProvider) {
       $routeProvider
