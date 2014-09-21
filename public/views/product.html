@@ -3,11 +3,12 @@
 </div>
 
 <div id="search">
-	Search: <input></input>
-	Category: <select ng-model="categoryChosen" ng-options="category for category in categories"></select>
+	Search: <input ng-change="changeSearch(searchText)" ng-model="searchText"></input>
+	Category: <select ng-change="changeCategory(categoryChosen) "ng-model="categoryChosen" ng-options="category for category in categories"></select>
+	<button ng-click="searchProduct(searchText, categoryChosen)">Search</button>
 </div>
 
-<div ng-repeat="product in products">
-	<div>{{product}} <span ng-click="goToProduct(product)"> Add Rating</span></div>
+<div ng-repeat="product in products | filter:searchText">
+	<div>{{product}} <a ng-click="goToProduct(product, categoryChosen)"> Add Rating</a></div>
 </div>
 
