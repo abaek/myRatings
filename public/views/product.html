@@ -8,7 +8,7 @@
     </select>
     <br /> 
     <div text-align="center">
-    <select ng-options="product for product in products" ng-model="searchText">
+    <select ng-change="searchProduct(searchText, categoryChosen)" ng-options="product for product in products" ng-model="searchText">
     	<option value="">(Select Here)</option>
     </select>
 	</div>
