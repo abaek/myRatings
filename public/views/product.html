@@ -14,8 +14,9 @@
 
 <div ng-show="showResult">
 	<button ng-click="goToProduct(results[0].name, results[0].category)">Add a review</button>
-
+	<canvas id="myChart" width="400" height="400"></canvas>
 	<div ng-repeat="result in results">
+		
 		<div>
 			Rating: <span>{{result.rating}} / 5</span>
 			<div>Comments{{result.comments}}</div>
