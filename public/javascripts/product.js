@@ -7,6 +7,14 @@ function($http, $scope, DBservice, $location, $modal, $routeParams){
 	$scope.searchProduct = function(searchTerm, categoryChosen){
 		DBservice.getRatings(searchTerm).then(function(){
 			$scope.results = DBservice.ratings;		
+
+			var total = 0;
+			//avg score
+			for(var i = 0; i < $scope.results.length; i++){
+				total += Number($scope.results[i].rating);
+			}
+			$scope.averageRating = Math.round(total/$scope.results.length);
+
 			console.log("ratings in searchProduct: " + $scope.results);	
 
 			var ratingStats = [];
@@ -60,6 +68,7 @@ function($http, $scope, DBservice, $location, $modal, $routeParams){
 			    segmentStrokeColor: "#000000"
 			});
 
+
 		})
 
 		$scope.showResult = true;
@@ -104,12 +113,12 @@ function($http, $scope, DBservice, $location, $modal, $routeParams){
 		$scope.searchProduct($routeParams['name'], $scope.categoryChosen);
   	}
 
+  	$scope.ratings = [{
+        current: 5,
+        max: 5
+    }];
+
 	$scope.goToProduct = function(name, category){
 		$location.path('addRating/' + name + '/' + category);
 	}
-
-
-
-
-
 }]);

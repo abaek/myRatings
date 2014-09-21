@@ -22,7 +22,7 @@
 
 <div ng-show="showResult">
     <span><canvas id="myChart" width="400" height="400"></canvas></span>
-    <span id="recentReviews">Recent Reviews:</span>
+    <span id="recentReviews">Recent Reviews: {{averageRating}} / 5</span>
     <span>
 	    <div ng-repeat="result in results" >
 	        <div class="panel panel-primary">
@@ -36,34 +36,6 @@
 	    </div>
 	</span>
 </div>
-
-<!--
-<div class="page-header">
-<h1></h1>
-</div>
-
-<div id="search">
-	Search: <input ng-keydown="changeSearch($event)" ng-model="searchText"></input>
-	Category: <select ng-change="changeCategory(categoryChosen) "ng-model="categoryChosen" ng-options="category for category in categories"></select>
-	<button ng-click="searchProduct(searchText, categoryChosen)">Search</button>
-</div>
-
-<div ng-show="showAutoComplete" ng-repeat="product in products | filter:searchText">
-	<div>{{product}} <a ng-click="goToProduct(product, categoryChosen)"> Add Rating</a></div>
-</div>
-
-<div ng-show="showResult">
-	<button ng-click="goToProduct(results[0].name, results[0].category)">Add a review</button>
-	<canvas id="myChart" width="400" height="400"></canvas>
-	<div ng-repeat="result in results">
-		
-		<div>
-			Rating: <span>{{result.rating}} / 5</span>
-			<div>Comments{{result.comments}}</div>
-		</div>
-	</div>
-</div>
--->
 
 
 

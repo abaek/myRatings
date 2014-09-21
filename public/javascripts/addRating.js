@@ -7,8 +7,9 @@ function($http, $scope, DBservice, $routeParams, $location){
 
 	$scope.addReview = function(){
 		var newRating = {name: $scope.productName, category: $scope.category, rating: $scope.rating, comments: $scope.comments}
-  		DBservice.addRating(newRating);
-  		$location.path('product/' + $scope.productName + '/' + $scope.category);
+  		DBservice.addRating(newRating).then(function(){
+  			$location.path('product/' + $scope.productName + '/' + $scope.category);
+  		})
 	};
 
 
