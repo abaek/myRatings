@@ -4,7 +4,7 @@
 
 <div>
 	Category: {{category}}
-	Rating <input type="text" ng-model="rating"></input>
+	Rating: <rating max="5" readonly="false" on-hover="hoveringOver(value)" on-leave="overStar = null" ng-model="rating"></rating>
 	Comments<input type="text" ng-model="comments"></input>
 	<button ng-click="addReview()">Submit</button>
 </div>
