@@ -2,7 +2,7 @@ var myRatings = angular.module('myRatings', ['ngRoute', 'ui.bootstrap'])
   .config(['$routeProvider',
     function($routeProvider) {
       $routeProvider
-        .when('/product', {
+        .when('/product/:name?/:category?', {
           templateUrl: '/views/product.html',
           controller: 'ProductController'
         })

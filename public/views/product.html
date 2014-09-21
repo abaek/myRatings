@@ -1,31 +1,36 @@
-<form id="nl-form" class="nl-form">
+<form id="nl-form" class="nl-form" align="center">
     I feel like 
-    <select ng-model="categoryChosen">
+    <select ng-change="changeCategory(categoryChosen)" ng-model="categoryChosen">
         <option value="Restaurants" selected>eating</option>
         <option value="Books">reading</option>
         <option value="Movies">watching</option>
         <option value="Games">playing</option>
     </select>
     <br /> 
+    <div text-align="center">
     <select ng-options="product for product in products" ng-model="searchText">
+    	<option value="">(Select Here)</option>
     </select>
+	</div>
     <div class="nl-submit-wrap">
         <button ng-click="searchProduct(searchText, categoryChosen)" class="nl-submit" type="submit">Search</button>
+        <button ng-click="goToProduct(searchText, categoryChosen)" class="nl-submit" type="submit">Add Review</button>
     </div>
     <div class="nl-overlay"></div>
 </form>
 
 
 <div ng-show="showResult">
-    <button ng-click="goToProduct(results[0].name, results[0].category)">Add a review</button>
-    <canvas id="myChart" width="400" height="400"></canvas>
-    <div ng-repeat="result in results">
-        
-        <div>
-            Rating: <span>{{result.rating}} / 5</span>
-            <div>Comments{{result.comments}}</div>
-        </div>
-    </div>
+    <span margin-left="50px"><canvas id="myChart" width="400" height="400"></canvas></span>
+    Recent Reviews:
+    <span>
+	    <div ng-repeat="result in results" >
+	        <div>
+	            Rating: <span>{{result.rating}} / 5</span>
+	            <div>Comments: {{result.comments}}</div>
+	        </div>
+	    </div>
+	</span>
 </div>
 
 <!--
