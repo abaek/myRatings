@@ -19,9 +19,6 @@ var app = express();
 //START MY OWN CODE
 var mongoose = require('mongoose');
 
-require('./models/Posts');
-require('./models/Comments');
-require('./models/Users');
 require('./models/Ratings')
 
 mongoose.connect('mongodb://andy:123456@kahana.mongohq.com:10021/myRatings');
