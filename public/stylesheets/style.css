@@ -21,6 +21,7 @@ ul.rating {
 .submitRating{
   background-color: white;
   color: black;
+  margin-top: 15px;
 }
 
 .addComment{
@@ -46,5 +47,9 @@ ul.rating {
 #recentReviews{
   margin-top:50px;
   font-size: 30px;
+}
+
+.addRatingPage{
+  margin-left: 50px;
 }
 
